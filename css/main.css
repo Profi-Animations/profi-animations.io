@@ -1,15 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+html {
+  font-size: 16px; /* Базовый размер (1rem = 16px) */
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13px; /* Уменьшаем базовый размер на мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 10px; /* Ещё меньше для маленьких экранов */
+  }
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 200;
   color: aliceblue;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 a {
@@ -27,8 +45,10 @@ img {
 }
 
 .container {
-    width: 1400px;
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 25px 15px;
 }
 
 /*Шапка*/
@@ -38,8 +58,9 @@ header {
 }
 
 header .logo {
-    width: 325px;
-    height: 50px;
+    width: 50%;
+    max-width: 325px;
+    height: auto;
 }
 
 header nav {
@@ -91,6 +112,14 @@ header nav ul li.btn a:hover {
     border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+    header .logo {
+        width: 40%;
+        max-width: 325px;
+        height: auto;
+    }
+}
+
 /*Презентация*/
 
 .hero {
@@ -104,14 +133,14 @@ header nav ul li.btn a:hover {
 
 .hero--info h2 {
     color: #3b80c2;
-    font-size: 20px;
+    font-size: 1.8rem;
     font-weight: 500;
     position: relative;
     left: 20px;
 }
 
 .hero--info h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 700;
 }
 
@@ -139,11 +168,47 @@ header nav ul li.btn a:hover {
 }
 
 .hero img {
-    position: absolute;
-    top: 200px;
-    right: 350px;
-    width: 400px;
-    height: 400px;
+    float: right;
+    margin-top: -300px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+  
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero img {
+        float: right;
+        margin-top: -300px;
+        width: 50%;
+        max-width: 400px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+  
+    .hero h2 {
+        font-size: 1rem;
+    }
+
+    .hero img {
+        float: right;
+        margin-top: -300px;
+        width: 25%;
+        max-width: 400px;
+        height: auto;
+    }
 }
 
 /*Популярное*/
@@ -153,7 +218,7 @@ header nav ul li.btn a:hover {
 }
 
 .tranding h3 {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 700;
 }
 
@@ -199,7 +264,7 @@ header nav ul li.btn a:hover {
 }
 
 .inprog h5 {
-    font-size: 40px;
+    font-size: 2.5rem;
     text-align: center;
 }
 
@@ -208,7 +273,7 @@ header nav ul li.btn a:hover {
 }
 
 .inprog p {
-    font-size: 25px;
+    font-size: 1.5rem;
     padding: 20px;
     font-weight: 400;
     text-align: center;
@@ -217,12 +282,12 @@ header nav ul li.btn a:hover {
 /*Работаем над*/
 
 .work h4 {
-    font-size: 40px;
+    font-size: 2.5rem;
     padding: 20px;
 }
 
 .work p {
-    font-size: 25px;
+    font-size: 1.5rem;
     padding: 10px;
     padding-left: 50px;
 }
@@ -234,7 +299,7 @@ header nav ul li.btn a:hover {
 }
 
 .team h4{
-    font-size: 40px;
+    font-size: 2.5rem;
     padding-left: 30px;
 }
 
@@ -247,7 +312,7 @@ header nav ul li.btn a:hover {
 
 .team .we span{
     display: block;
-    padding: 20px;
+    padding: 1.5rem;
     text-align: center;
     font-weight: 300;
     font-size: 25px;
@@ -266,18 +331,20 @@ footer .blocks{
 }
 
 footer .logo{
-    width: 310px;
-    height: 50px;
+    width: 100%;
+    max-width: 310px;
+    height: auto;
 }
 
 footer .youtube{
-    width: 30px;
+    width: 60px;
     padding: 10px;
-    height: 30px;
+    height: auto;
 }
 
 footer .blocks p{
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     margin: 15px;
 }
 
@@ -305,6 +372,20 @@ footer hr{
 
 footer > p{
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    footer .logo{
+        width: 75%;
+        max-width: 310px;
+        height: auto;
+    }
+
+    footer .youtube{
+        width: 50px;
+        padding: 10px;
+        height: auto;
+    }
 }
 
 /*Проекты*/
@@ -339,13 +420,13 @@ footer > p{
 .works .project span {
     display: block;
     padding: 0px 15px;
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 .works .project span img {
     vertical-align: middle;
     width: 20px;
-    height: 20px;
+    height: auto;
     margin-left: 25px;
     position: relative;
     top: 18px;
@@ -362,21 +443,31 @@ footer > p{
 }
 
 .cube--news h1 {
-    font-size: 35px;
+    font-size: 2rem;
     font-weight: 700;
 }
 
 .cube--news p {
     font-weight: 400;
-    font-size: 17px;
+    font-size: 1rem;
     line-height: 170%;
     margin: 30px;
 }
 
 .cube--news img {
     float: right;
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .cube--news img {
+        float: right;
+        width: 35%;
+        max-width: 300px;
+        height: auto;
+    }
 }
 
 /*Контакты*/
@@ -387,6 +478,6 @@ footer > p{
 
 .contacts .cont{
     padding: 20px 20px;
-    font-size: 20px;
+    font-size: 1.5rem;
     line-height: 140%;
 }
